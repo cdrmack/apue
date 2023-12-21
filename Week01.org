@@ -4,9 +4,17 @@
 
 Just started this class, looks great.
 
-** Assignments: [2/5]
+** Assignments: [4/5]
 *** DONE create git repo for storing notes
 *** DONE create VM with NetBSD
-*** TODO get NetBSD source code and at least one more (FreeBSD? Debian? illumos?)
-*** TODO Homework - Generic Warmup Exercise
+*** DONE get NetBSD source code (additionally I have downloaded GNU coreutils and illumos)
+*** DONE Homework - Generic Warmup Exercise
 *** TODO Homework - Compare Code Exercise
+
+For the "Compare Code Exercise" I have picked =echo=, =pwd= and =sleep=.
+
+* Segment 02 - UNIX History
+
+The original Unix development started in 1969 at the Bell Labs research center (AT&T back then) by [[https://en.wikipedia.org/wiki/Ken_Thompson][Ken Thompson]] (Unix, B, Go), [[https://en.wikipedia.org/wiki/Dennis_Ritchie][Dennis Ritchie]] (Unix, C, K&R) and others.
+
+The UNIX system family tree: =/usr/share/misc/bsd-family-tree=
