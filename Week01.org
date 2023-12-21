@@ -7,11 +7,18 @@ Just started this class, looks great.
 ** Assignments: [4/5]
 *** DONE create git repo for storing notes
 *** DONE create VM with NetBSD
-*** DONE get NetBSD source code (additionally I have downloaded GNU coreutils and illumos)
+*** DONE get NetBSD source code
 *** DONE Homework - Generic Warmup Exercise
 *** TODO Homework - Compare Code Exercise
 
 For the "Compare Code Exercise" I have picked =echo=, =pwd= and =sleep=.
+I plan to compare these between NetBSD, GNU coreutils, illumos and FreeBSD.
+
+** Resources: [0/4]
+*** TODO "Advanced Programming in the UNIX® Environment" (3rd edition) - W. Richard Stevens, Stephen A. Rago
+*** TODO "The C Programming Language" (2nd edition) - Brian W. Kernighan, Dennis M. Ritchie
+*** TODO "The Practice of Programming" - Brian W. Kernighan, Rob Pike
+*** TODO [[https://missing.csail.mit.edu/][The Missing Semester of Your CS Education]]
 
 * Segment 02 - UNIX History
 
