@@ -4,21 +4,23 @@
 
 Just started this class, looks great.
 
-** Assignments: [4/5]
-*** DONE create git repo for storing notes
-*** DONE create VM with NetBSD
-*** DONE get NetBSD source code
-*** DONE Homework - Generic Warmup Exercise
-*** TODO Homework - Compare Code Exercise
+** Assignments [5/5]
+- [X] create git repo for storing notes
+- [X] create VM with NetBSD
+- [X] get NetBSD source code
+- [X] Homework - Generic Warmup Exercise
+- [X] Homework - Compare Code Exercise
+
+** Notes
 
 For the "Compare Code Exercise" I have picked =echo=, =pwd= and =sleep=.
-I plan to compare these between NetBSD, GNU coreutils, illumos and FreeBSD.
+I checked the implementation in NetBSD, FreeBSD, GNU coreutils and illumos.
 
-** Resources: [0/4]
-*** TODO "Advanced Programming in the UNIX® Environment" (3rd edition) - W. Richard Stevens, Stephen A. Rago
-*** TODO "The C Programming Language" (2nd edition) - Brian W. Kernighan, Dennis M. Ritchie
-*** TODO "The Practice of Programming" - Brian W. Kernighan, Rob Pike
-*** TODO [[https://missing.csail.mit.edu/][The Missing Semester of Your CS Education]]
+** Resources [0/4]
+- [ ] "Advanced Programming in the UNIX® Environment" (3rd edition) - W. Richard Stevens, Stephen A. Rago
+- [ ] "The C Programming Language" (2nd edition) - Brian W. Kernighan, Dennis M. Ritchie
+- [ ] "The Practice of Programming" - Brian W. Kernighan, Rob Pike
+- [ ] [[https://missing.csail.mit.edu/][The Missing Semester of Your CS Education]]
 
 * Segment 02 - UNIX History
 
