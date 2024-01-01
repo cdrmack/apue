@@ -27,3 +27,47 @@ I checked the implementation in NetBSD, FreeBSD, GNU coreutils and illumos.
 The original Unix development started in 1969 at the Bell Labs research center (AT&T back then) by [[https://en.wikipedia.org/wiki/Ken_Thompson][Ken Thompson]] (Unix, B, Go), [[https://en.wikipedia.org/wiki/Dennis_Ritchie][Dennis Ritchie]] (Unix, C, K&R) and others.
 
 The UNIX system family tree: =/usr/share/misc/bsd-family-tree=
+
+* Segment 03 - UNIX Basics
+
+System calls are documented in section 2 of the manual pages, library calls are in section 3.
+
+Standards:
+- IEEE POSIX (1003.1-2008)
+- SUSv4
+
+Looks like the "Generic Warmup Exercise" was covered here.
+
+Preferable exit codes: =sysexits(3)=
+
+When designing program follow [[https://en.wikipedia.org/wiki/Unix_philosophy][Unix philosophy]].
+
+UNIX epoch is January 1st, 00:00:00, 1970. Fun-fact: UNIX was created in 1969 so before the UNIX epoch.
+
+Unix Time Values:
+- clock time
+- user CPU time (time that process spent in the user-land)
+- system CPU time (kernel-space)
+
+How many lines of code there are under =/usr/src/usr.bin/=.
+
+#+begin_src shell
+  time find /usr/src/usr.bin -name '*.[ch]' -exec cat {} \; | wc -l
+#+end_src
+
+We can optimize it a bit.
+
+#+begin_src shell
+  time find /usr/src/usr.bin -name '*.[ch]' -print | xargs cat | wc -l
+#+end_src
+
+File descriptors:
+- 0 (stdin)
+- 1 (stdout)
+- 2 (stderr)
+
+Ubuffered (syscalls): =open(2)=, =read(2)=, =write(2)=, =lseek(2)=, =close(2)=
+Buffered (libcalls): =fopen(3)=, =fread(3)=, =fwrite(3)=, =getc(3)=, =putc(3)=
+
+=^D= - EOF (end of file)
+=^C= - SIGINT (interrupt signal)
