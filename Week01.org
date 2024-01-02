@@ -71,3 +71,28 @@ Buffered (libcalls): =fopen(3)=, =fread(3)=, =fwrite(3)=, =getc(3)=, =putc(3)=
 
 =^D= - EOF (end of file)
 =^C= - SIGINT (interrupt signal)
+
+It's possible to implement custom behaviour for the given signal with the =signal(3)= function.
+
+#+begin_src c
+  void
+  sig_int(int signo)
+  {
+	  printf("\nCaught SIGINT (Signal #%d)!\n$$ ", signo);
+	  (void)fflush(stdout);
+  }
+
+  int
+  main(int argc, char **argv)
+  {
+	  if (signal(SIGINT, sig_int) == SIG_ERR)
+	  {
+		  fprintf(stderr, "signal error: %s\n", strerror(errno));
+		  exit(1);
+	  }
+
+      // ...
+  }
+#+end_src
+
+=echo $$= returns shell's PID. To get PID at runtime use =getpid(2)=.
