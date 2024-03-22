@@ -78,18 +78,18 @@ It's possible to implement custom behaviour for the given signal with the =signa
   void
   sig_int(int signo)
   {
-	  printf("\nCaught SIGINT (Signal #%d)!\n$$ ", signo);
-	  (void)fflush(stdout);
+      printf("\nCaught SIGINT (Signal #%d)!\n$$ ", signo);
+      (void)fflush(stdout);
   }
 
   int
   main(int argc, char **argv)
   {
-	  if (signal(SIGINT, sig_int) == SIG_ERR)
-	  {
-		  fprintf(stderr, "signal error: %s\n", strerror(errno));
-		  exit(1);
-	  }
+      if (signal(SIGINT, sig_int) == SIG_ERR)
+      {
+          fprintf(stderr, "signal error: %s\n", strerror(errno));
+          exit(1);
+      }
 
       // ...
   }
