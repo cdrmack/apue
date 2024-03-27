@@ -16,11 +16,11 @@ Just started this class, looks great.
 For the "Compare Code Exercise" I have picked =echo=, =pwd= and =sleep=.
 I checked the implementation in NetBSD, FreeBSD, GNU coreutils and illumos.
 
-** Resources [0/4]
-- [ ] "Advanced Programming in the UNIX® Environment" (3rd edition) - W. Richard Stevens, Stephen A. Rago
-- [ ] "The C Programming Language" (2nd edition) - Brian W. Kernighan, Dennis M. Ritchie
-- [ ] "The Practice of Programming" - Brian W. Kernighan, Rob Pike
-- [ ] [[https://missing.csail.mit.edu/][The Missing Semester of Your CS Education]]
+** Resources
+- "Advanced Programming in the UNIX® Environment" (3rd edition) - W. Richard Stevens, Stephen A. Rago
+- "The C Programming Language" (2nd edition) - Brian W. Kernighan, Dennis M. Ritchie
+- "The Practice of Programming" - Brian W. Kernighan, Rob Pike
+- [[file:MissingSemester.org][The Missing Semester of Your CS Education]]
 
 * Segment 02 - UNIX History
 
@@ -87,8 +87,8 @@ It's possible to implement custom behaviour for the given signal with the =signa
   {
       if (signal(SIGINT, sig_int) == SIG_ERR)
       {
-          fprintf(stderr, "signal error: %s\n", strerror(errno));
-          exit(1);
+	  fprintf(stderr, "signal error: %s\n", strerror(errno));
+	  exit(1);
       }
 
       // ...

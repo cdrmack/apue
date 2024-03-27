@@ -1,0 +1,15 @@
+#+TITLE: Missing Semester
+
+[[https://missing.csail.mit.edu][The Missing Semester of Your CS Education]]
+
+* TODO Lecture 01: Course Overview + The Shell
+* TODO Lecture 02: Shell Tools and Scripting
+* TODO Lecture 03: Editors (vim)
+* TODO Lecture 04: Data Wrangling
+* TODO Lecture 05: Command-line Environment
+* TODO Lecture 06: Version Control (git)
+* TODO Lecture 07: Debugging and Profiling
+* TODO Lecture 08: Metaprogramming
+* TODO Lecture 09: Security and Cryptography
+* TODO Lecture 10: Potpourri
+* TODO Lecture 11: Q&A
