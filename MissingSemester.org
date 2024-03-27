@@ -2,7 +2,35 @@
 
 [[https://missing.csail.mit.edu][The Missing Semester of Your CS Education]]
 
-* TODO Lecture 01: Course Overview + The Shell
+* DONE Lecture 01: Course Overview + The Shell
+
+Let's assume that =foo= is a file that only root can modify.
+
+#+begin_src shell
+  echo 500 > foo
+#+end_src
+
+The command above won't work when run as a regular user.
+
+#+begin_src shell
+  sudo echo 500 > foo
+#+end_src
+
+This one won't work either. =sudo= is being used for =echo= only.
+Redirection =>= just takes the output and tries to write it to the =foo= file as a regular user.
+
+To solve this one could login as root and run the command again.
+
+It can be done without switching to the root's shell though.
+
+#+begin_src shell
+  echo 500 | sudo tee foo
+#+end_src
+
+=tee= copies standard input to standard output and making a copy in zero or more files.
+
+=xdg-open= opens a file or URL in the user's preferred application.
+
 * TODO Lecture 02: Shell Tools and Scripting
 * TODO Lecture 03: Editors (vim)
 * TODO Lecture 04: Data Wrangling
