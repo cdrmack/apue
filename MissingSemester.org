@@ -1,4 +1,5 @@
 #+TITLE: Missing Semester
+#+STARTUP: overview
 
 [[https://missing.csail.mit.edu][The Missing Semester of Your CS Education]]
 
@@ -31,7 +32,148 @@ It can be done without switching to the root's shell though.
 
 =xdg-open= opens a file or URL in the user's preferred application.
 
-* TODO Lecture 02: Shell Tools and Scripting
+* DONE Lecture 02: Shell Tools and Scripting
+
+This class was about scripting in =bash=.
+
+=$0= script name
+=$#= number of arguments
+=$$= PID
+
+Inside the script file we can get the passed argument by using =$1= up to =$9=.
+We can also use =$@= to get all arguments at once.
+
+#+begin_src bash
+  #!/usr/bin/env bash
+  # file: asd.sh
+  echo "Running program $0 with $# arguments. Arguments are: $@"
+#+end_src
+
+#+begin_src shell
+  ./asd.sh foo bar
+  # Running program ./asd.sh with 2 arguments. Arguments are: foo bar
+#+end_src
+
+There is a difference between ="foo"= and ='foo'=. The first one can expand variables.
+
+#+begin_src shell
+  foo=bar
+  echo $foo
+  # bar
+  echo "test $foo"
+  # test bar
+  echo 'test $foo'
+  # test $foo
+#+end_src
+
+=$?= return value of the last command
+
+#+begin_src shell
+  foo
+  # bash: foo: command not found
+  echo $?
+  # 127
+#+end_src
+
+=$_= last argument of the last command
+
+#+begin_src shell
+  echo "foo" "bar"
+  # foo bar
+  echo $_
+  # bar
+#+end_src
+
+=!!= repeats the last command
+
+#+begin_src shell
+  mkdir /mnt/foo
+  # mkdir: /mnt/foo: Permission denied
+  sudo !!
+#+end_src
+
+There are =false= and =true= commands that return =1= and =0= error codes.
+
+#+begin_src shell
+  true
+  echo $?
+  # 0
+  false
+  echo $?
+  # 1
+#+end_src
+
+There are also logical operators.
+
+#+begin_src shell
+  false || echo "this will print"
+  # this will print
+  true || echo "nothing is printed"
+  #
+  false && echo "nothing is printed"
+  #
+  true && echo "this will print"
+  # this will print
+#+end_src
+
+We can use =;= to run multiple commands in a row.
+
+#+begin_src shell
+  false ; echo "this will always print"
+  # this will always print
+#+end_src
+
+We can store command result inside variable with =$(command)=.
+
+#+begin_src shell
+  foo=$(pwd)
+  echo $foo
+  # /tmp
+  echo "we are in $(pwd)"
+  # we are in /tmp
+#+end_src
+
+We can create temporary files to store command output on the fly with =<(command)=.
+Some commands expect file handlers so this trick can be used there.
+
+#+begin_src shell
+  cat <(ls) <(ls ..)
+#+end_src
+
+We can redirect standard output with =>= and standard error with =2>=.
+
+#+begin_src shell
+  grep foo bar.txt > /dev/null 2> /dev/null
+#+end_src
+
+When doing comparison in shell (for example when using =if= statement) we can check available comparisons in =test(1)=.
+
+*Globbing* examples:
+- =ls *.sh=, list only files ending with =.sh=
+- =ls project?=, list content of directories named projectX where X is a single character, will enter =project1= and =project2= but not =project42=
+- =convert image.{png,jpg}= will expand to =convert image.png image.jpg=
+
+  This is really powerfull, another example =touch project{1,2}/src/test/test{1,2,3}.py=
+  We can also use ranges =touch {foo,bar}/{a..j}=
+
+Shebang is used to let shell know how to run script. To avoid hardcoding the path we can use the =env= with an argument.
+#+begin_src python
+  #!/usr/bin/env python
+  import sys
+  for arg in reversed(sys.argv[1:]):
+      print(arg)
+#+end_src
+
+=find= program can find things but also do something with them.
+#+begin_src shell
+  find . -name "*.tmp" -exec rm {} \;
+#+end_src
+
+When piping commands, we are connecting STDOUT to STDIN, but some commands like =tar= take inputs from arguments.
+To solve this we can use =xargs= command which will contruct argument list(s) from STDIN and execute utility. For example =ls | xargs rm= will delete files in the current directory.
+
+=locate= find filenames quickly because it uses database that is recomputed periodically (via =updatedb=).
+
 * TODO Lecture 03: Editors (vim)
 * TODO Lecture 04: Data Wrangling
 * TODO Lecture 05: Command-line Environment
