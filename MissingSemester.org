@@ -174,7 +174,20 @@ To solve this we can use =xargs= command which will contruct argument list(s) fr
 
 =locate= find filenames quickly because it uses database that is recomputed periodically (via =updatedb=).
 
-* TODO Lecture 03: Editors (vim)
+* DONE Lecture 03: Editors (vim)
+
+I used to use vim as my main editor for a while so I was aware about most things discussed in this lecture.
+
+There is a built-in help for commands: =:help w=
+
+To change "link description" text in the example below we can use =c i [= or =c i ]= with cursor anywhere between the brackets.
+
+#+begin_example
+  [link description](link_url)
+#+end_example
+
+To remove text and the brackets use =c a [= or =c a ]=.
+
 * TODO Lecture 04: Data Wrangling
 * TODO Lecture 05: Command-line Environment
 * TODO Lecture 06: Version Control (git)
