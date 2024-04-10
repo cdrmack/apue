@@ -188,7 +188,49 @@ To change "link description" text in the example below we can use =c i [= or =c 
 
 To remove text and the brackets use =c a [= or =c a ]=.
 
-* TODO Lecture 04: Data Wrangling
+* DONE Lecture 04: Data Wrangling
+
+Lecturer describes "data wrangling" as a process of changing one representation of data to some other representation. Sounds like conversion.
+He gives an example of the pipe operator where we move output of one program to the input of another.
+
+=sed(1)= is a stream editor, allows to replace content.
+
+If we want to get rid off everything before "Disconnected from" including that text itself we can use the following sed expression:
+
+#+begin_src shell
+  sed 's/.*Disconnected from//'
+#+end_src
+
+Regexps are really powerful but some expressions can become really complicated. There are many regexp debuggers available online that can help.
+
+Didn't know about the =uniq(1)= program, =-c= can count duplicates.
+
+=sort -nk1,1= will run a numeric sort on the output that will start (and end) on the first column.
+
+=awk(1)= by default parses input with the whitespace separated columns.
+
+#+begin_src shell
+  echo "123 foo" | awk '{print $2}'
+#+end_src
+
+The command above will print "foo".
+
+=paste(1)= can be used to merge multiple lines of text.
+
+#+begin_example
+  one
+  two
+  three
+#+end_example
+
+If we run =paste -sd,= on the file (example) above we will get =one,two,three= back.
+
+We can use =bc(1)= to calculate stuff.
+
+#+begin_src shell
+  echo "1 + 2 + 3" | bc
+#+end_src
+
 * TODO Lecture 05: Command-line Environment
 * TODO Lecture 06: Version Control (git)
 * TODO Lecture 07: Debugging and Profiling
