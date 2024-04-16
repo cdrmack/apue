@@ -231,7 +231,27 @@ We can use =bc(1)= to calculate stuff.
   echo "1 + 2 + 3" | bc
 #+end_src
 
-* TODO Lecture 05: Command-line Environment
+* DONE Lecture 05: Command-line Environment
+
+Lecture about jobs, tmux, dotfiles and ssh.
+
+=Ctrl-C= - SIGINT
+=Ctrl-\= - SIGQUIT
+=Ctrl-Z= - suspend
+
+#+begin_src shell
+  sleep 1000 &
+  jobs
+  bg %1
+  kill -STOP %1
+  jobs
+  bg %1
+  jobs
+  kill -KILL %1
+#+end_src
+
+=ssh-copy-id= can be used to copy public key to the remote machine
+
 * TODO Lecture 06: Version Control (git)
 * TODO Lecture 07: Debugging and Profiling
 * TODO Lecture 08: Metaprogramming
