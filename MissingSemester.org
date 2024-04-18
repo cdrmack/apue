@@ -252,7 +252,35 @@ Lecture about jobs, tmux, dotfiles and ssh.
 
 =ssh-copy-id= can be used to copy public key to the remote machine
 
-* TODO Lecture 06: Version Control (git)
+* DONE Lecture 06: Version Control (git)
+
+The following command provide contents or details of given object.
+
+#+begin_src shell
+  git cat-file -p <hash>
+#+end_src
+
+Nice defaults for the log.
+
+#+begin_src shell
+  git log --all --graph --decorate --oneline
+#+end_src
+
+If there are conflicts during the merge we can use =git mergetool=.
+Remember to =git add= the file(s) once again after resolving conflicts and then =git merge --continue=.
+
+We can specify relation between local and remote branches. This is used to stop repeating =git push origin main:main=.
+
+#+begin_src shell
+  git push origin main:main
+  git branch --set-upstream-to=origin/main
+  git branch -vv
+  git push
+#+end_src
+
+=git clone --shallow=, useful for gigantic repos, do not clone the whole history
+=git add -p=, select which changes to include (file content)
+
 * TODO Lecture 07: Debugging and Profiling
 * TODO Lecture 08: Metaprogramming
 * TODO Lecture 09: Security and Cryptography
