@@ -37,8 +37,12 @@ It can be done without switching to the root's shell though.
 This class was about scripting in =bash=.
 
 =$0= script name
+=$1= - =$9= arguments to the script
+=$@= all the arguments
 =$#= number of arguments
+=$?= return code of the previous command
 =$$= PID
+=!!= entire last command, including arguments
 
 Inside the script file we can get the passed argument by using =$1= up to =$9=.
 We can also use =$@= to get all arguments at once.
@@ -65,6 +69,17 @@ There is a difference between ="foo"= and ='foo'=. The first one can expand vari
   echo 'test $foo'
   # test $foo
 #+end_src
+
+Bash supports control flow techniques likes =if= and =for=. Similarly, bash has functions.
+
+#+begin_src shell
+  mkcd () {
+      mkdir -p "$1"
+      cd "$1"
+  }
+#+end_src
+
+In the example above =$1= is the first argument to the script/function.
 
 =$?= return value of the last command
 
@@ -123,7 +138,9 @@ We can use =;= to run multiple commands in a row.
   # this will always print
 #+end_src
 
-We can store command result inside variable with =$(command)=.
+We can store command result inside variable with =$(CMD)=.
+=$(CMD)= will execute CMD, get the output of the command and substittue it in place.
+This is called command substitution.
 
 #+begin_src shell
   foo=$(pwd)
@@ -133,8 +150,10 @@ We can store command result inside variable with =$(command)=.
   # we are in /tmp
 #+end_src
 
-We can create temporary files to store command output on the fly with =<(command)=.
+We can create temporary files to store command output on the fly with =<(CMD)=.
 Some commands expect file handlers so this trick can be used there.
+=<(CMD)= will execute command and place the output in a temporary file and substitute the =<()= with that file's name.
+This is called process substitution.
 
 #+begin_src shell
   cat <(ls) <(ls ..)
@@ -147,6 +166,8 @@ We can redirect standard output with =>= and standard error with =2>=.
 #+end_src
 
 When doing comparison in shell (for example when using =if= statement) we can check available comparisons in =test(1)=.
+
+[[https://github.com/koalaman/shellcheck][shellcheck]] is a shell script static analysis tool.
 
 *Globbing* examples:
 - =ls *.sh=, list only files ending with =.sh=
@@ -178,7 +199,7 @@ To solve this we can use =xargs= command which will contruct argument list(s) fr
 
 I used to use vim as my main editor for a while so I was aware about most things discussed in this lecture.
 
-There is a built-in help for commands: =:help w=
+There is a built-in help for commands: =:help <topic>= (example =:w= or =w=)
 
 To change "link description" text in the example below we can use =c i [= or =c i ]= with cursor anywhere between the brackets.
 
