@@ -302,7 +302,60 @@ We can specify relation between local and remote branches. This is used to stop 
 =git clone --shallow=, useful for gigantic repos, do not clone the whole history
 =git add -p=, select which changes to include (file content)
 
-* TODO Lecture 07: Debugging and Profiling
+* DONE Lecture 07: Debugging and Profiling
+
+** Logging
+
+=lnav= - log file navigator
+=journalctl= - interact with the journal logs (systemd)
+=logger(1)= - make entries in the system log
+=log show --last 1m=
+
+** Debugging
+
+All examples were made for python.
+
+Python debugger: =python -m ipdb script.py=
+
+To trace syscalls use =strace=.
+
+#+begin_src shell
+  sudo strace ls -l > /dev/null
+  sudo strace -e lstat ls -l > /dev/null
+#+end_src
+
+=pyflakes= and =mypy= are examples of static analysis tools for python.
+
+** Profiling
+
+=time(1)= can be used with another command/program to measure execution time.
+There is real time, user time and system time.
+
+#+begin_src shell
+  time curl cht.sh/tar
+#+end_src
+
+There are tracing and sampling profilers.
+Tracing execute with the code and trace the execution.
+Sampling on the other hand halt the program and analyse the stacktrace then resume and repeat at some frequency.
+
+Python CPU profiler: =python -m cProfile -s tottime script.py=
+Python MEM profiler: =python -m memory_profiler script.py=
+
+There are also line profilers, for example: =kernprof -l -v script.py=
+
+#+begin_src shell
+  sudo perf stat stress -c 1
+  sudo perf report
+#+end_src
+
+Flame graphs and call graphs can be useful to visualize data.
+
+=ncdu= - NCurses Disk Usage
+=lsof= - list open files
+
+[[https://github.com/sharkdp/hyperfine][hyperfine]] is a command-line benchmarking tool.
+
 * TODO Lecture 08: Metaprogramming
 * TODO Lecture 09: Security and Cryptography
 * TODO Lecture 10: Potpourri
