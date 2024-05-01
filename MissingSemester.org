@@ -356,7 +356,25 @@ Flame graphs and call graphs can be useful to visualize data.
 
 [[https://github.com/sharkdp/hyperfine][hyperfine]] is a command-line benchmarking tool.
 
-* TODO Lecture 08: Metaprogramming
+* DONE Lecture 08: Metaprogramming
+
+Explanation of build systems with =make(1)= demo.
+
+#+begin_src makefile
+  paper.pdf: paper.tex plot-data.png
+	  pdflatex paper.tex
+
+  plot-%.png: %.dat plot.py
+	  ./plot.py -i $*.dat -o $@
+#+end_src
+
+=$*= will be replaced with whatever =%= is
+=$@= will be replaced with the target expansion (=plot-%.png=)
+
+Versioning explanation. I personally like [[https://semver.org/][Semantic Versioning]] (it's also mentioned in the lecture), =major.minor.patch=.
+
+Continuous Integration and different test types (unit, integration, regression, mocking) explanation.
+
 * TODO Lecture 09: Security and Cryptography
 * TODO Lecture 10: Potpourri
 * TODO Lecture 11: Q&A
