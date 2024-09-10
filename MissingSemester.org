@@ -376,5 +376,17 @@ Versioning explanation. I personally like [[https://semver.org/][Semantic Versio
 Continuous Integration and different test types (unit, integration, regression, mocking) explanation.
 
 * TODO Lecture 09: Security and Cryptography
+
+Lecture starts with explanation of entropy and examples of different passwords. Entropy is basically =log2(number of possibilities)=.
+For coin flip it's =log2(2)= which is =1 bit= of entropy. For dice roll it's =log2(6)= which is around =2.6 bits= of entropy.
+
+Next hash functions are being discussed and SHA-1 (Secure Hash Algorithm 1) is being demonstrated. It produces a 160-bit (20-bytes) hash value typically displayed as 40 hex digits.
+
+#+begin_src shell
+  printf 'hello' | sha1sum
+#+end_src
+
+Hash result might be used to verify if downloaded file is the original one. We can also play "head or tails" by giving hashes and then giving the original numbers.
+
 * TODO Lecture 10: Potpourri
 * TODO Lecture 11: Q&A
