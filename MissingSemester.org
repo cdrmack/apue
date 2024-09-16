@@ -375,7 +375,7 @@ Versioning explanation. I personally like [[https://semver.org/][Semantic Versio
 
 Continuous Integration and different test types (unit, integration, regression, mocking) explanation.
 
-* TODO Lecture 09: Security and Cryptography
+* DONE Lecture 09: Security and Cryptography
 
 Lecture starts with explanation of entropy and examples of different passwords. Entropy is basically =log2(number of possibilities)=.
 For coin flip it's =log2(2)= which is =1 bit= of entropy. For dice roll it's =log2(6)= which is around =2.6 bits= of entropy.
@@ -422,6 +422,29 @@ The example above will ask for password to generate key to encrypt the file.
 =-salt= is a randomized value (not secret) appended to the password when calculating hash value, =hash(password + salt)=.
 This is being done to protect against rainbow tables - precomputed tables that store hashes for common passwords.
 Thanks to =-salt= the same password on different sites will have different hash values.
+
+** Asymmetric Key Cryptography
+
+"API":
+- =keygen()= -> (public key, private key)
+- =encrypt(plaintext, public key)= -> ciphertext
+- =decrypt(ciphertext, private key)= -> plaintext
+- =sign(message, private key)= -> signature
+- =verify(message, signature, public key)= -> checks if signed with the correct key
+
+How to share your public key?
+- exchange in person
+- web of trust (if B has verified public key of C and you trust B then you assume public key of C is valid)
+- keybase.io (social proof)
+
+** Hybrid Encryption
+
+Symmetric encryption is fast, asymmetric is slow. If we want to send a lot of data we can use hybrid approach:
+1. generate symmetric key =sym_k=
+2. use =sym_k= to encrypt the message =m= symmetrically and get =sym_enc_m=
+3. use public key =pub_k= to to encrypt =sym_k= asymmetrically and get =asym_enc_sym_k=
+4. send =sym_enc_m= (big data, fast encryption) and =asym_enc_sym_k= (small data, slow encryption)
+5. receiver uses it's private key to decrypt =asym_enc_sym_k=, gets =sym_k= and uses it to decrypt =sym_enc_m=
 
 * TODO Lecture 10: Potpourri
 * TODO Lecture 11: Q&A
