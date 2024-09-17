@@ -447,4 +447,15 @@ Symmetric encryption is fast, asymmetric is slow. If we want to send a lot of da
 5. receiver uses it's private key to decrypt =asym_enc_sym_k=, gets =sym_k= and uses it to decrypt =sym_enc_m=
 
 * TODO Lecture 10: Potpourri
+
+** Keyboard Remapping
+
+It's possible to attach an action to specific key, for example opening a terminal or new browser window.
+Some software can even distinct single press from hold, for example press caps lock will send escape signal but holding it will send control.
+
+** Daemons
+
+Daemon is basically a background process, e.g. =sshd= or =systemd=.
+We can run =systemctl status= to list currently running daemons.
+
 * TODO Lecture 11: Q&A
