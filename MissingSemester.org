@@ -446,16 +446,59 @@ Symmetric encryption is fast, asymmetric is slow. If we want to send a lot of da
 4. send =sym_enc_m= (big data, fast encryption) and =asym_enc_sym_k= (small data, slow encryption)
 5. receiver uses it's private key to decrypt =asym_enc_sym_k=, gets =sym_k= and uses it to decrypt =sym_enc_m=
 
-* TODO Lecture 10: Potpourri
+* DONE Lecture 10: Potpourri
 
-** Keyboard Remapping
+** Instructor 1
+
+*** Keyboard Remapping
 
 It's possible to attach an action to specific key, for example opening a terminal or new browser window.
 Some software can even distinct single press from hold, for example press caps lock will send escape signal but holding it will send control.
 
-** Daemons
+*** Daemons
 
 Daemon is basically a background process, e.g. =sshd= or =systemd=.
 We can run =systemctl status= to list currently running daemons.
+
+*** FUSE
+
+Modern operating systems support multiple file systems.
+When user runs =touch foo= to create a file this command (run in user space) performs a system call to the kernel.
+Kernel on the other hand performs the appropriate filesystem call (depending on the filesystem) to create the file.
+
+I think we can say that user space works on "virtual filesystem".
+
+Filesystem in User Space allows filesystems to be implemented by a user program.
+During the lecture there was an example with sending an e-mail each time a file is created. Code for sending e-mails is in the user space.
+When we =touch foo= a system call to the kernel is being called. Kernel works on =FUSE= which is able to "callback" code in the user space.
+
+=sshfs= is an example of the FUSE filesystem. We can run commands on the local machine but these are being sent to the remote machine, run there and the output is returned back.
+It allows local programs to see files on the remote machine as if they were local.
+
+*** Backups
+
+Nothing new here.
+
+** Instructor 2
+
+Topics discussed:
+- APIs
+- command-line arguments
+- window managers
+- VPNs
+- markdown
+
+How to remove distinguish what is argument? For example how can we remove file called =-i=? This will be treated as an argument, not filename.
+We can mark something as *not* a flag by using double dash. If we use =--= it means "do not interpret anything following this".
+Going back to the example we can remove file called =-i= by using =rm -- -i=.
+
+** Instructor 3
+
+Topics discussed:
+- Hammerspoon (desktop automation for macOS)
+- booting & Live USBs
+- Docker, Vagrant
+- notebook programming (Jupyter, Wolfram Mathematica)
+- GitHub
 
 * TODO Lecture 11: Q&A
