@@ -501,4 +501,6 @@ Topics discussed:
 - notebook programming (Jupyter, Wolfram Mathematica)
 - GitHub
 
-* TODO Lecture 11: Q&A
+* DONE Lecture 11: Q&A
+
+Just check the website: https://missing.csail.mit.edu/2020/qa/
