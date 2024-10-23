@@ -17,10 +17,10 @@ For the "Compare Code Exercise" I have picked =echo=, =pwd= and =sleep=.
 I checked the implementation in NetBSD, FreeBSD, GNU coreutils and illumos.
 
 ** Resources
-- "Advanced Programming in the UNIX® Environment" (3rd edition) - W. Richard Stevens, Stephen A. Rago
-- "The C Programming Language" (2nd edition) - Brian W. Kernighan, Dennis M. Ritchie
-- "The Practice of Programming" - Brian W. Kernighan, Rob Pike
-- [[file:MissingSemester.org][The Missing Semester of Your CS Education]]
+- [ ] "Advanced Programming in the UNIX® Environment" (3rd edition) - W. Richard Stevens, Stephen A. Rago
+- [ ] "The C Programming Language" (2nd edition) - Brian W. Kernighan, Dennis M. Ritchie
+- [ ]"The Practice of Programming" - Brian W. Kernighan, Rob Pike
+- [X] [[file:MissingSemester.org][The Missing Semester of Your CS Education]]
 
 * Segment 02 - UNIX History
 

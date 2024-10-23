@@ -1,0 +1,13 @@
+#+TITLE: ToolTips
+
+* tags
+
+=exctags(1)= generates an index file for language objects.
+It can be used by text editors to quickly locate them later on.
+Use =--list-languages= to print supported languages.
+
+The following command generates tag file for standard C header files (=/usr/include=) and system libraries (=/usr/src/lib=) on FreeBSD.
+
+#+begin_src shell
+  exctags -f ~/.tags -R -I __weak_alias --languages=C,C++ /usr/include /usr/src/lib
+#+end_src

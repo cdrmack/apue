@@ -1,1 +1,20 @@
 My notes from the [[https://stevens.netmeister.org/631/][Advanced Programming in the UNIX Environment]] course.
+
+Lectures [1/13]
+- [X] [[file:Week01.org][Week 01]] (introduction, UNIX history, UNIX programming basics)
+- [ ] Week 02 (file I/O, file sharing)
+- [ ] Week 03 (files and directories)
+- [ ] Week 04 (filesystems, system data files, time & date)
+- [ ] Week 05 (UNIX tools: =cc(1)=, =make(1)=, revision control, =diff(1)=, =patch(1)=, =gdb(1)=)
+- [ ] Week 06 (process environment, process control)
+- [ ] Week 07 (process groups, sessions, signals)
+- [ ] Week 08 (interprocess communication I)
+- [ ] Week 09 (interprocess communication II)
+- [ ] Week 10 (daemon processes, HTTP)
+- [ ] Week 11 (shared libraries)
+- [ ] Week 12 (advanced I/O: nonblocking I/O, polling, record locking / encryption in a nutshell)
+- [ ] Week 13 (restricting processes / containers)
+
+Extra
+- [[file:MissingSemester.org][Missing Semester]]
+- [[file:ToolTips.org][Tool Tips]]
