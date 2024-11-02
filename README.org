@@ -1,7 +1,14 @@
 My notes from the [[https://stevens.netmeister.org/631/][Advanced Programming in the UNIX Environment]] course.
 
-Lectures [1/13]
+* Resources
+- [ ] "Advanced Programming in the UNIX® Environment" (3rd edition) - W. Richard Stevens, Stephen A. Rago
+- [ ] "The C Programming Language" (2nd edition) - Brian W. Kernighan, Dennis M. Ritchie
+- [ ] "The Practice of Programming" - Brian W. Kernighan, Rob Pike
+- [X] [[file:MissingSemester.org][The Missing Semester of Your CS Education]]
+
+* Lectures [2/14]
 - [X] [[file:Week01.org][Week 01]] (introduction, UNIX history, UNIX programming basics)
+- [X] [[file:Week01_Assignments.org][Week 01 Assignments]]
 - [ ] Week 02 (file I/O, file sharing)
 - [ ] Week 03 (files and directories)
 - [ ] Week 04 (filesystems, system data files, time & date)
@@ -14,7 +21,4 @@ Lectures [1/13]
 - [ ] Week 11 (shared libraries)
 - [ ] Week 12 (advanced I/O: nonblocking I/O, polling, record locking / encryption in a nutshell)
 - [ ] Week 13 (restricting processes / containers)
-
-Extra
-- [[file:MissingSemester.org][Missing Semester]]
 - [[file:ToolTips.org][Tool Tips]]

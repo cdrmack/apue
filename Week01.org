@@ -4,24 +4,6 @@
 
 Just started this class, looks great.
 
-** Assignments [5/5]
-- [X] create git repo for storing notes
-- [X] create VM with NetBSD
-- [X] get NetBSD source code
-- [X] Homework - Generic Warmup Exercise
-- [X] Homework - Compare Code Exercise
-
-** Notes
-
-For the "Compare Code Exercise" I have picked =echo=, =pwd= and =sleep=.
-I checked the implementation in NetBSD, FreeBSD, GNU coreutils and illumos.
-
-** Resources
-- [ ] "Advanced Programming in the UNIX® Environment" (3rd edition) - W. Richard Stevens, Stephen A. Rago
-- [ ] "The C Programming Language" (2nd edition) - Brian W. Kernighan, Dennis M. Ritchie
-- [ ]"The Practice of Programming" - Brian W. Kernighan, Rob Pike
-- [X] [[file:MissingSemester.org][The Missing Semester of Your CS Education]]
-
 * Segment 02 - UNIX History
 
 The original Unix development started in 1969 at the Bell Labs research center (AT&T back then) by [[https://en.wikipedia.org/wiki/Ken_Thompson][Ken Thompson]] (Unix, B, Go), [[https://en.wikipedia.org/wiki/Dennis_Ritchie][Dennis Ritchie]] (Unix, C, K&R) and others.
@@ -87,8 +69,8 @@ It's possible to implement custom behaviour for the given signal with the =signa
   {
       if (signal(SIGINT, sig_int) == SIG_ERR)
       {
-	  fprintf(stderr, "signal error: %s\n", strerror(errno));
-	  exit(1);
+          fprintf(stderr, "signal error: %s\n", strerror(errno));
+          exit(1);
       }
 
       // ...

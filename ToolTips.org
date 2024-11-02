@@ -1,4 +1,4 @@
-#+TITLE: ToolTips
+#+TITLE: Tool Tips
 
 * tags
 
@@ -9,5 +9,5 @@ Use =--list-languages= to print supported languages.
 The following command generates tag file for standard C header files (=/usr/include=) and system libraries (=/usr/src/lib=) on FreeBSD.
 
 #+begin_src shell
-  exctags -f ~/.tags -R -I __weak_alias --languages=C,C++ /usr/include /usr/src/lib
+  exctags -e -f ~/.tags -R -I __weak_alias --languages=C,C++ /usr/include /usr/src/lib
 #+end_src
